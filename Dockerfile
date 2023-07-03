@@ -20,4 +20,6 @@ USER nobody
 
 EXPOSE 8080
 
+ENV DATABASE_URL=jdbc:mariadb://localhost:3306/kakao
+
 CMD ["java", "-jar", "kakao-1.0.jar"]
