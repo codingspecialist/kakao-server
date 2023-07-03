@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name="order_tb", indexes = {
+@Table(name="orders", indexes = {
         @Index(name = "order_user_id_idx", columnList = "user_id")
 })
 public class Order {
