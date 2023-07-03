@@ -14,7 +14,7 @@ FROM krmp-d2hub-idock.9rum.cc/goorm/eclipse-temurin:17-jre
 
 WORKDIR /opt/techcampus
 
-COPY --from=build /home/gradle/project/build/libs/kakao-1.0.jar .
+COPY --from=build /home/gradle/project/build/libs/kakao-0.0.1-SNAPSHOT.jar .
 
 USER nobody
 
@@ -22,4 +22,4 @@ EXPOSE 8080
 
 ENV DATABASE_URL=jdbc:mariadb://localhost:3306/kakao
 
-CMD ["java", "-jar", "kakao-1.0.jar"]
+CMD ["java", "-jar", "0.0.1-SNAPSHOT.jar"]

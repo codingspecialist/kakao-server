@@ -3,6 +3,8 @@
 ## 1. IDE에서 실행하는법
 ```text
 mysql service start
+
+chmod +x ./gradlew
 ./gradlew clean build
 nohub java -jar -Dspring.profiles.active=ide kakao-1.0.jar &
 
@@ -17,6 +19,9 @@ chmod +x ./startFront.sh
 
 
 # 구름에서 정리한 MD 파일
+
+## 배포방법 PDF
+https://file.notion.so/f/s/4311cb97-1efd-434e-b796-dbae3b5aac2f/%ED%85%8C%ED%81%AC%EC%BA%A0%ED%8D%BC%EC%8A%A4_%EB%B0%B0%ED%8F%AC_%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4.pdf?id=7e37819e-025e-4229-b896-7f631b4de6fe&table=block&spaceId=079fd135-2d90-4bdf-b746-cdd6f990ba6a&expirationTimestamp=1688515200000&signature=_NGoT-F7w9N0Kt66av8bZ4YGXQpy0y3yijQK-2HtIM8&downloadName=%ED%85%8C%ED%81%AC%EC%BA%A0%ED%8D%BC%EC%8A%A4+%EB%B0%B0%ED%8F%AC+%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4.pdf
 
 ## d2hub 빌드
 프로젝트가 정상적으로 실행되려면 Dockerfile이 현재 프로젝트의 최상단에 있어야 합니다.
