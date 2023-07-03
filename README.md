@@ -1,3 +1,23 @@
+# IDE 활용법
+
+## 1. IDE에서 실행하는법
+```text
+mysql service start
+./gradlew clean build
+nohub java -jar -Dspring.profiles.active=ide kakao-1.0.jar &
+
+chmod +x ./startFront.sh
+```
+
+## 2.  배포하는 법
+```text
+빌드
+카르고배포
+```
+
+
+# 구름에서 정리한 MD 파일
+
 ## d2hub 빌드
 프로젝트가 정상적으로 실행되려면 Dockerfile이 현재 프로젝트의 최상단에 있어야 합니다.
 
