@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name="order_list", indexes = {
+@Table(name="item_tb", indexes = {
         @Index(name = "item_option_id_idx", columnList = "option_id"),
         @Index(name = "item_order_id_idx", columnList = "order_id")
 })

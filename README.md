@@ -4,6 +4,8 @@
 ```text
 mysql service start
 
+gradle build -x test && java -jar -Dspring.profiles.active=ide ./build/libs/kakao-0.0.1-SNAPSHOT.jar
+
 chmod +x ./gradlew
 ./gradlew clean build
 nohub java -jar -Dspring.profiles.active=ide kakao-1.0.jar &

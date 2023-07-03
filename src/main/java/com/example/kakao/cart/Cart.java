@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name="cart_list",
+@Table(name="cart_tb",
         indexes = {
                 @Index(name = "cart_user_id_idx", columnList = "user_id"),
                 @Index(name = "cart_option_id_idx", columnList = "option_id")
