@@ -6,17 +6,15 @@ mysql service start
 
 gradle build -x test && java -jar -Dspring.profiles.active=ide ./build/libs/kakao-0.0.1-SNAPSHOT.jar
 
-chmod +x ./gradlew
-./gradlew clean build
-nohub java -jar -Dspring.profiles.active=ide kakao-1.0.jar &
-
 chmod +x ./startFront.sh
+
+./startFront.sh
 ```
 
 ## 2.  배포하는 법
 ```text
 빌드
-카르고배포
+카르고배포 (mysql ? , react, spring 3개의 서비스가  localhost 로 연결되는가?)
 ```
 
 
