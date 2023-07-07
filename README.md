@@ -2,7 +2,7 @@
 
 ## 1. IDE에서 실행하는법
 ```text
-mysql service start
+sudo mysql service start
 
 gradle clean build && java -jar -Dspring.profiles.active=ide build/libs/kakao-1.0.jar
 
