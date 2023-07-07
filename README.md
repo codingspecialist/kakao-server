@@ -6,9 +6,7 @@ mysql service start
 
 gradle clean build && java -jar -Dspring.profiles.active=ide build/libs/kakao-1.0.jar
 
-chmod +x ./startFront.sh
-
-./startFront.sh
+chmod +x ./startFront.sh && ./startFront.sh
 ```
 
 ## 2.  배포하는 법
