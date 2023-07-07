@@ -12,9 +12,12 @@ chmod +x ./startFront.sh && ./startFront.sh
 ## 2.  배포하는 법
 ```text
 빌드
-카르고배포 (mysql ? , react, spring 3개의 서비스가  localhost 로 연결되는가?)
+카르고배포 (화면쪽에 아직 문제 있음)
 ```
 
+## 3. 배포된 서버 확인하는 법
+- url/api 로 조회해야함.
+- ex) https://user-app.krampoline.com/kd52020ea7a71a/api/products
 
 # 구름에서 정리한 MD 파일
 
