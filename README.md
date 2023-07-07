@@ -4,7 +4,7 @@
 ```text
 mysql service start
 
-gradle build -x test && java -jar -Dspring.profiles.active=ide ./build/libs/kakao-0.0.1-SNAPSHOT.jar
+gradle clean build && java -jar -Dspring.profiles.active=ide build/libs/kakao-1.0.jar
 
 chmod +x ./startFront.sh
 

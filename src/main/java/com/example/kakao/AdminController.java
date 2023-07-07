@@ -39,7 +39,7 @@ public class AdminController {
     }
 
 
-    @Profile({"dev"})
+    @Profile({"local"})
     @Bean
     CommandLineRunner devServerStart(){
         return args -> {
