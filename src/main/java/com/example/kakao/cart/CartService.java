@@ -50,7 +50,15 @@ public class CartService {
 
         cartList.forEach(cart -> {
             try {
-                cartJPARepository.save(cart);
+                Optional<Cart> cartOP = cartJPARepository.findByOptionId(cart.getOption().getId());
+                if(cartOP.isPresent()){
+                    Cart cartPS = cartOP.get();
+                    int updateQuantity = cartPS.getQuantity()+cart.getQuantity();
+                    cartPS.update(updateQuantity, cartPS.getOption().getPrice() * updateQuantity);
+                }else{
+                    cartJPARepository.save(cart);
+                }
+
             }catch (Exception e){
                 throw new Exception500("장바구니 담기 중에 오류가 발생했습니다 : "+e.getMessage());
             }
