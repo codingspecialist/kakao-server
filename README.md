@@ -1,5 +1,8 @@
 # IDE 활용법
 
+문서
+https://docs.google.com/document/d/1pIXFl8PheUcqjKOXYm18zEt89amxZQmsCJ7wrY-ODvA/edit
+
 ## 1. IDE에서 실행하는법
 ```text
 service mysql start
