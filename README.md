@@ -5,12 +5,18 @@ https://docs.google.com/document/d/1pIXFl8PheUcqjKOXYm18zEt89amxZQmsCJ7wrY-ODvA/
 
 ## 1. IDE에서 실행하는법
 ```text
+실행 URL과 포트를 80포트로 변경
+```
+
+```text
 service mysql start
 ```
 
 ```text
 gradle clean build && java -jar -Dspring.profiles.active=ide build/libs/kakao-1.0.jar
+```
 
+```text
 chmod +x ./startFront.sh && ./startFront.sh
 ```
 
