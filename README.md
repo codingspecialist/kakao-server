@@ -2,11 +2,7 @@
 
 ## 1. IDE에서 실행하는법
 ```text
-sudo mysql service start (이거 안됨.......)
-```
-```text
-cd /usr/sbin
-./mysqld &
+service mysql start
 ```
 
 ```text
