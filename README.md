@@ -2,8 +2,14 @@
 
 ## 1. IDE에서 실행하는법
 ```text
-sudo mysql service start
+sudo mysql service start (이거 안됨.......)
+```
+```text
+cd /usr/sbin
+./mysqld &
+```
 
+```text
 gradle clean build && java -jar -Dspring.profiles.active=ide build/libs/kakao-1.0.jar
 
 chmod +x ./startFront.sh && ./startFront.sh
