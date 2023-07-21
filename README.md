@@ -21,6 +21,13 @@ chmod +x ./startFront.sh && ./startFront.sh
 - url/api 로 조회해야함.
 - ex) https://user-app.krampoline.com/kd52020ea7a71a/api/products
 
+## 4. 카르고 배포환경 초기화하는 법
+```text
+kubectl delete statefulset mariadb
+kubectl delete svc mariadb
+kubectl delete pvc data-mariadb-0
+```
+
 # 구름에서 정리한 MD 파일
 
 ## 배포방법 PDF
