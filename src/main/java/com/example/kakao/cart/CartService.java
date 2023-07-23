@@ -89,7 +89,7 @@ public class CartService {
         for (CartRequest.UpdateDTO updateDTO : requestDTOs) {
             for (Cart cart : cartList) {
                 if(cart.getId() == updateDTO.getCartId()){
-                    cart.update(updateDTO.getQuantity(), cart.getPrice() * updateDTO.getQuantity());
+                    cart.update(updateDTO.getQuantity(), cart.getOption().getPrice() * updateDTO.getQuantity());
                 }
             }
         }
