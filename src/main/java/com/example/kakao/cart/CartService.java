@@ -24,7 +24,7 @@ public class CartService {
     /**
      * 1. 모든 제약 조건을 주고, try catch로 제어하는 법 (transaction 시간 길어짐)
      * 2. 미리 영속화 시켜서 write 하기전에 값을 검증하는 법 (select 많아짐)
-     *
+     * <p>
      * 무결성을 체크하기 위해 여러 번의 select 작업을 수행하는 방법은 비효율적이며,
      * 동시에 여러 사용자가 동시에 작업할 때 데이터 일관성을 보장하기 어려울 수 있습니다.
      * 따라서, 데이터베이스 제약 조건을 사용하여 데이터의 무결성을 보장하고,
@@ -43,7 +43,7 @@ public class CartService {
 
         List<Cart> cartList = requestDTOs.stream().map(cartDTO -> {
             Option optionPS = optionJPARepository.findById(cartDTO.getOptionId()).orElseThrow(
-                    ()-> new Exception404("해당 옵션을 찾을 수 없습니다 : "+cartDTO.getOptionId())
+                    () -> new Exception404("해당 옵션을 찾을 수 없습니다 : " + cartDTO.getOptionId())
             );
             return cartDTO.toEntity(optionPS, user);
         }).collect(Collectors.toList());
@@ -51,16 +51,16 @@ public class CartService {
         cartList.forEach(cart -> {
             try {
                 Optional<Cart> cartOP = cartJPARepository.findByOptionIdAndUserId(cart.getOption().getId(), user.getId());
-                if(cartOP.isPresent()){
+                if (cartOP.isPresent()) {
                     Cart cartPS = cartOP.get();
-                    int updateQuantity = cartPS.getQuantity()+cart.getQuantity();
+                    int updateQuantity = cartPS.getQuantity() + cart.getQuantity();
                     cartPS.update(updateQuantity, cartPS.getOption().getPrice() * updateQuantity);
-                }else{
+                } else {
                     cartJPARepository.save(cart);
                 }
 
-            }catch (Exception e){
-                throw new Exception500("장바구니 담기 중에 오류가 발생했습니다 : "+e.getMessage());
+            } catch (Exception e) {
+                throw new Exception500("장바구니 담기 중에 오류가 발생했습니다 : " + e.getMessage());
             }
         });
     }
@@ -70,25 +70,26 @@ public class CartService {
         List<Cart> cartList = cartJPARepository.findAllByUserId(user.getId());
 
         List<Integer> cartIds = cartList.stream().map(cart -> cart.getId()).collect(Collectors.toList());
-        List<Integer> requestIds =requestDTOs.stream().map(dto -> dto.getCartId()).collect(Collectors.toList());
+        List<Integer> requestIds = requestDTOs.stream().map(dto -> dto.getCartId()).collect(Collectors.toList());
 
-        if(cartIds.size() == 0){
+        if (cartIds.size() == 0) {
             throw new Exception404("주문할 장바구니 상품이 없습니다");
         }
 
-        if(requestIds.stream().distinct().count() != requestIds.size()){
+        if (requestIds.stream().distinct().count() != requestIds.size()) {
             throw new Exception400("동일한 장바구니 아이디를 주문할 수 없습니다");
         }
 
         for (Integer requestId : requestIds) {
-            if(!cartIds.contains(requestId)){
-                throw new Exception400("장바구니에 없는 상품은 주문할 수 없습니다 : "+requestId);
+            if (!cartIds.contains(requestId)) {
+                throw new Exception400("장바구니에 없는 상품은 주문할 수 없습니다 : " + requestId);
             }
         }
 
-        for (CartRequest.UpdateDTO updateDTO : requestDTOs) {
-            for (Cart cart : cartList) {
-                if(cart.getId() == updateDTO.getCartId()){
+        for (Cart cart : cartList) {
+            for (CartRequest.UpdateDTO updateDTO : requestDTOs) {
+
+                if (cart.getId() == updateDTO.getCartId()) {
                     cart.update(updateDTO.getQuantity(), cart.getOption().getPrice() * updateDTO.getQuantity());
                 }
             }
