@@ -42,10 +42,4 @@ public class CartRestController {
         return ResponseEntity.ok(apiResult);
     }
 
-    @PostMapping("/carts/clear")
-    public ResponseEntity<?> clear(@AuthenticationPrincipal CustomUserDetails userDetails) {
-        cartListService.clear(userDetails.getUser());
-        ApiUtils.ApiResult<?> apiResult = ApiUtils.success(null);
-        return ResponseEntity.ok(apiResult);
-    }
 }

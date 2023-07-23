@@ -33,7 +33,7 @@ public class UserRestController {
         return ResponseEntity.ok().header(JwtTokenProvider.HEADER, jwt).body(ApiUtils.success(null));
     }
 
-    // 사용 안함 - 프론트 요구사항에 이메일 중복 검사 로직 없음.
+    // (기능-요구사항없는데 프론트에서 구현됨) 이메일중복체크
     @PostMapping("/check")
     public ResponseEntity<?> check(@RequestBody @Valid  UserRequest.EmailCheckDTO emailCheckDTO, Errors errors) {
         userService.sameCheckEmail(emailCheckDTO.getEmail());

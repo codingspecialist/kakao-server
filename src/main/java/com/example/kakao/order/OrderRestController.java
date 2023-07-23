@@ -32,18 +32,5 @@ public class OrderRestController {
         return ResponseEntity.ok(apiResult);
     }
 
-    // 사용 안함
-    @PostMapping("/orders/clear")
-    public ResponseEntity<?> clear() {
-        orderService.clear();
-        ApiUtils.ApiResult<?> apiResult = ApiUtils.success(null);
-        return ResponseEntity.ok(apiResult);
-    }
-
-//    @PostMapping("/orders/save")
-//    public ResponseEntity<?> saveOrderV1(@RequestBody @Valid List<OrderRequest.SaveItemDTO> requestDTOs, Errors errors, @AuthenticationPrincipal CustomUserDetails userDetails) {
-//        OrderResponse.SaveDTO responseDTO = orderService.saveOrder(requestDTOs, userDetails.getUser());
-//        return ResponseEntity.ok(ApiUtils.success(responseDTO));
-//    }
 
 }

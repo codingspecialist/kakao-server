@@ -103,13 +103,4 @@ public class CartService {
         return new CartResponse.FindAllDTO(cartLists);
     }
 
-    @Transactional
-    public void clear(User user) {
-        try {
-            cartJPARepository.deleteByUserId(user.getId());
-        }catch (Exception e){
-            throw new Exception500("장바구니 비우기 실패 : "+e.getMessage());
-        }
-
-    }
 }
