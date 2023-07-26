@@ -3,6 +3,12 @@
 문서
 https://docs.google.com/document/d/1pIXFl8PheUcqjKOXYm18zEt89amxZQmsCJ7wrY-ODvA/edit
 
+배포문서 (IDE)
+https://docs.google.com/document/d/1pIXFl8PheUcqjKOXYm18zEt89amxZQmsCJ7wrY-ODvA/edit
+
+배포문서 (DKOS)
+https://docs.google.com/document/d/1cJFWNyhv6rJYsFzNnpiQTvoc7v5D8b2T_4PROdyLv7g/edit
+
 ## 1. IDE에서 실행하는법
 ```text
 실행 URL과 포트를 80포트로 변경
